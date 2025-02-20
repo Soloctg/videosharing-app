@@ -6,6 +6,8 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import youtube from "./api/youtube";
 import SearchBar from './components/SearchBar';
+import VideoList from './components/VideoList';
+import VideoDetail from './components/VideoDetail';
 import { useState } from "react";
 
 
@@ -22,12 +24,12 @@ function App() {
 	                <SearchBar onSubmit={handleSubmit} />
                 </Grid>
 
-                <Grid xs={8}>
-                    {/* {VideoDetail} */}
+                <Grid item xs={8}>
+	                <VideoDetail video={selectedVideo} />
                 </Grid>
 
-                <Grid xs={4}>
-                    {/* {VideoList} */}
+                <Grid item xs={4}>
+	                <VideoList videos={videos} onVideoSelect={setSelectedVideo} />
                 </Grid>
 
 
